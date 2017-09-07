@@ -1,0 +1,14 @@
+{
+  "name": "SitemapBuilder",
+  "version": "0.1.0",
+  "description": "Generates a sitemap for websites",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ethan Shields",
+  "license": "ISC",
+  "dependencies": {
+    "sitemap-generator": "^7.2.3"
+  }
+}
