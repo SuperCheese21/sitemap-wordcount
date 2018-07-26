@@ -60,6 +60,5 @@ typings/
 # .DS_Store files
 .DS_Store
 
-# Generated sitemap files
-*.txt
 *.xml
+*.csv

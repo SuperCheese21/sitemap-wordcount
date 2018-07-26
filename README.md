@@ -1,1 +1,1 @@
-# SitemapBuilder
+# Sitemap generator / Website word counter

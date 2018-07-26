@@ -1,14 +1,21 @@
 {
   "name": "SitemapBuilder",
   "version": "0.1.0",
-  "description": "Generates a sitemap for websites",
+  "description": "Generates a sitemap with word counts for websites",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "wordcount": "node ./src/wordcount.js",
+    "wordcount-watch": "nodemon ./src/wordcount.js",
+    "sitemap": "node ./src/sitemap.js",
+    "sitemap-watch": "nodemon ./src/sitemap.js"
   },
   "author": "Ethan Shields",
   "license": "ISC",
   "dependencies": {
+    "@iarna/word-count": "^1.0.3",
+    "html-to-text": "^4.0.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "sitemap-generator": "^7.6.2"
   }
 }
