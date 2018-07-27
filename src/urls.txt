@@ -1,4 +1,2 @@
-https://www.welocalize.com/
-https://www.google.com/
-https://medium.com/
-https://www.npmjs.com/
+https://www.welocalize.com/company/
+https://flightaware.com/

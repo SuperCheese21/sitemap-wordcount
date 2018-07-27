@@ -50,6 +50,4 @@ const getWordCount = async url => {
     });
 })();
 
-module.exports = {
-    getWordCount: getWordCount
-}
+module.exports = getWordCount;
