@@ -31,5 +31,3 @@ const { parseUrls, getWordCount } = require('./util.js');
             });
     });
 })();
-
-module.exports = getWordCount;
