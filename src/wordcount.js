@@ -1,26 +1,6 @@
 const fs = require('fs');
-const rp = require('request-promise');
 
-const htmlToText = require('html-to-text');
-const wordCount = require('@iarna/word-count');
-
-const { parseUrls } = require('./util.js');
-
-/**
- * Async function that gets the word count of a website
- * @param  {String}  url Website URL to get word count of
- * @return {Promise}     Promise object representing word count of the website
- */
-const getWordCount = async url => {
-    return await rp(url).then(html => {
-        const text = htmlToText.fromString(html, {
-            wordwrap: false,
-            ignoreHref: true,
-            ignoreImage: true
-        });
-        return wordCount(text);
-    });
-}
+const { parseUrls, getWordCount } = require('./util.js');
 
 /**
  * Gets word count of each URL in URL array
@@ -29,6 +9,7 @@ const getWordCount = async url => {
     // Create file write stream
     const writeStream = fs.createWriteStream('./output/wordcount.csv');
 
+    // Write CSV header to console/file
     const header = 'URL' + '\t' + 'Word Count';
     writeStream.write(header + '\n');
     console.log(header);
@@ -36,6 +17,7 @@ const getWordCount = async url => {
     // Create URL array form urls.txt file
     const urls = parseUrls();
 
+    // Get word count on each URL in array and print to console/file
     urls.forEach(url => {
         getWordCount(url)
             .then(res => {
@@ -45,7 +27,7 @@ const getWordCount = async url => {
                 console.log(line);
             })
             .catch(err => {
-                console.error('Error: ' + err);
+                console.error(err.message);
             });
     });
 })();

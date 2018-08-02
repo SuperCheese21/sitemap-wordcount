@@ -1,8 +1,7 @@
 const SitemapGenerator = require('sitemap-generator');
 const fs = require('fs');
 
-const { parseUrls } = require('./util.js');
-const getWordCount = require('./wordcount.js');
+const { parseUrls, getWordCount } = require('./util.js');
 
 const urls = parseUrls();
 
